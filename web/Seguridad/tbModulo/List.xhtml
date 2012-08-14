@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListTbModuloTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListTbModuloEmpty}" rendered="#{tbModuloController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{tbModuloController.items.rowCount > 0}">
+                    <h:outputText value="#{tbModuloController.pagination.pageFirstItem + 1}..#{tbModuloController.pagination.pageLastItem + 1}/#{tbModuloController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{tbModuloController.previous}" value="#{bundle.Previous} #{tbModuloController.pagination.pageSize}" rendered="#{tbModuloController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{tbModuloController.next}" value="#{bundle.Next} #{tbModuloController.pagination.pageSize}" rendered="#{tbModuloController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{tbModuloController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbModuloTitle_cnsctvoMdlo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cnsctvoMdlo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbModuloTitle_cdgoMdlo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cdgoMdlo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbModuloTitle_dscrpcnMdlo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscrpcnMdlo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbModuloTitle_brrdo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.brrdo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbModuloTitle_incoVgnca}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.incoVgnca}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbModuloTitle_fnVgnca}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fnVgnca}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbModuloTitle_fchaCrcn}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fchaCrcn}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbModuloTitle_usroCrcn}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usroCrcn}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbModuloTitle_obsrvcns}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obsrvcns}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbModuloTitle_vsble}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.vsble}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbModuloTitle_cnsctvoDsde}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cnsctvoDsde}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbModuloTitle_cnsctvoHsta}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cnsctvoHsta}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{tbModuloController.prepareView}" value="#{bundle.ListTbModuloViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tbModuloController.prepareEdit}" value="#{bundle.ListTbModuloEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tbModuloController.destroy}" value="#{bundle.ListTbModuloDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{tbModuloController.prepareCreate}" value="#{bundle.ListTbModuloCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListTbModuloIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

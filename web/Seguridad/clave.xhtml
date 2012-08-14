@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Sistema Integrado de Información</title>
+    </h:head>
+    <h:body onload="dlg.show()">
+        <h:form>
+            <h:inputHidden  id="estado_login" value="#{loginController.loginStatus}"/>
+            <p:dialog header="" modal="true" widgetVar="dlg" visible="true">
+                <p:panel header="Ingreso">
+                    <h:panelGrid columns="2" bgcolor="white">
+                        <h:outputText  value="Usuario:" />
+                        <p:inputText   value="#{loginController.usuario}" required="true" requiredMessage="Es necesario el usuario" />
+                        <h:outputText  value="Clave:   " />
+                        <h:inputSecret value="#{loginController.password}"/>
+                        <p:commandButton value="Close" oncomplete="dlg.hide();"/>
+                    </h:panelGrid>
+                </p:panel>
+            </p:dialog>
+            <p:commandButton value="Show" type="button" onclick=""/>
+            <p:commandButton value="hide" type="button" onclick="dlg.hide()"/>
+         </h:form>
+    </h:body>
+
+    function showDialog(){
+       if(Condition){
+          dialog.show();
+       }else{
+          dialog.hide();
+       }
+    }
+
+
+</html>
+
+
+

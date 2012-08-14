@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTbSucursalTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTbSucursalLabel_cnsctvoScrsl}" for="cnsctvoScrsl" />
+                    <h:inputText id="cnsctvoScrsl" value="#{tbSucursalController.selected.cnsctvoScrsl}" title="#{bundle.CreateTbSucursalTitle_cnsctvoScrsl}" required="true" requiredMessage="#{bundle.CreateTbSucursalRequiredMessage_cnsctvoScrsl}"/>
+                    <h:outputLabel value="#{bundle.CreateTbSucursalLabel_cdgoScrsl}" for="cdgoScrsl" />
+                    <h:inputText id="cdgoScrsl" value="#{tbSucursalController.selected.cdgoScrsl}" title="#{bundle.CreateTbSucursalTitle_cdgoScrsl}" required="true" requiredMessage="#{bundle.CreateTbSucursalRequiredMessage_cdgoScrsl}"/>
+                    <h:outputLabel value="#{bundle.CreateTbSucursalLabel_nmbreScrsl}" for="nmbreScrsl" />
+                    <h:inputText id="nmbreScrsl" value="#{tbSucursalController.selected.nmbreScrsl}" title="#{bundle.CreateTbSucursalTitle_nmbreScrsl}" required="true" requiredMessage="#{bundle.CreateTbSucursalRequiredMessage_nmbreScrsl}"/>
+                    <h:outputLabel value="#{bundle.CreateTbSucursalLabel_nmbreRspnsble}" for="nmbreRspnsble" />
+                    <h:inputText id="nmbreRspnsble" value="#{tbSucursalController.selected.nmbreRspnsble}" title="#{bundle.CreateTbSucursalTitle_nmbreRspnsble}" required="true" requiredMessage="#{bundle.CreateTbSucursalRequiredMessage_nmbreRspnsble}"/>
+                    <h:outputLabel value="#{bundle.CreateTbSucursalLabel_cdgoDne}" for="cdgoDne" />
+                    <h:inputText id="cdgoDne" value="#{tbSucursalController.selected.cdgoDne}" title="#{bundle.CreateTbSucursalTitle_cdgoDne}" />
+                    <h:outputLabel value="#{bundle.CreateTbSucursalLabel_drccn}" for="drccn" />
+                    <h:inputText id="drccn" value="#{tbSucursalController.selected.drccn}" title="#{bundle.CreateTbSucursalTitle_drccn}" required="true" requiredMessage="#{bundle.CreateTbSucursalRequiredMessage_drccn}"/>
+                    <h:outputLabel value="#{bundle.CreateTbSucursalLabel_tlfn}" for="tlfn" />
+                    <h:inputText id="tlfn" value="#{tbSucursalController.selected.tlfn}" title="#{bundle.CreateTbSucursalTitle_tlfn}" />
+                    <h:outputLabel value="#{bundle.CreateTbSucursalLabel_fx}" for="fx" />
+                    <h:inputText id="fx" value="#{tbSucursalController.selected.fx}" title="#{bundle.CreateTbSucursalTitle_fx}" />
+                    <h:outputLabel value="#{bundle.CreateTbSucursalLabel_eml}" for="eml" />
+                    <h:inputText id="eml" value="#{tbSucursalController.selected.eml}" title="#{bundle.CreateTbSucursalTitle_eml}" />
+                    <h:outputLabel value="#{bundle.CreateTbSucursalLabel_cnsctvoCdgoCdd}" for="cnsctvoCdgoCdd" />
+                    <h:inputText id="cnsctvoCdgoCdd" value="#{tbSucursalController.selected.cnsctvoCdgoCdd}" title="#{bundle.CreateTbSucursalTitle_cnsctvoCdgoCdd}" />
+                    <h:outputLabel value="#{bundle.CreateTbSucursalLabel_usroCrcn}" for="usroCrcn" />
+                    <h:inputText id="usroCrcn" value="#{tbSucursalController.selected.usroCrcn}" title="#{bundle.CreateTbSucursalTitle_usroCrcn}" />
+                    <h:outputLabel value="#{bundle.CreateTbSucursalLabel_fchaCrcn}" for="fchaCrcn" />
+                    <h:inputText id="fchaCrcn" value="#{tbSucursalController.selected.fchaCrcn}" title="#{bundle.CreateTbSucursalTitle_fchaCrcn}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tbSucursalController.create}" value="#{bundle.CreateTbSucursalSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{tbSucursalController.prepareList}" value="#{bundle.CreateTbSucursalShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTbSucursalIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

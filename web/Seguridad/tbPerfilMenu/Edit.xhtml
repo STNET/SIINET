@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTbPerfilMenuTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTbPerfilMenuLabel_pmCnsctvoPrflMnu}" for="pmCnsctvoPrflMnu" />
+                    <h:inputText id="pmCnsctvoPrflMnu" value="#{tbPerfilMenuController.selected.pmCnsctvoPrflMnu}" title="#{bundle.EditTbPerfilMenuTitle_pmCnsctvoPrflMnu}" required="true" requiredMessage="#{bundle.EditTbPerfilMenuRequiredMessage_pmCnsctvoPrflMnu}"/>
+                    <h:outputLabel value="#{bundle.EditTbPerfilMenuLabel_PCdgoPrfl}" for="PCdgoPrfl" />
+                    <h:inputText id="PCdgoPrfl" value="#{tbPerfilMenuController.selected.PCdgoPrfl}" title="#{bundle.EditTbPerfilMenuTitle_PCdgoPrfl}" required="true" requiredMessage="#{bundle.EditTbPerfilMenuRequiredMessage_PCdgoPrfl}"/>
+                    <h:outputLabel value="#{bundle.EditTbPerfilMenuLabel_pmAdcn}" for="pmAdcn" />
+                    <h:inputText id="pmAdcn" value="#{tbPerfilMenuController.selected.pmAdcn}" title="#{bundle.EditTbPerfilMenuTitle_pmAdcn}" required="true" requiredMessage="#{bundle.EditTbPerfilMenuRequiredMessage_pmAdcn}"/>
+                    <h:outputLabel value="#{bundle.EditTbPerfilMenuLabel_pmMdfccn}" for="pmMdfccn" />
+                    <h:inputText id="pmMdfccn" value="#{tbPerfilMenuController.selected.pmMdfccn}" title="#{bundle.EditTbPerfilMenuTitle_pmMdfccn}" required="true" requiredMessage="#{bundle.EditTbPerfilMenuRequiredMessage_pmMdfccn}"/>
+                    <h:outputLabel value="#{bundle.EditTbPerfilMenuLabel_pmElmncn}" for="pmElmncn" />
+                    <h:inputText id="pmElmncn" value="#{tbPerfilMenuController.selected.pmElmncn}" title="#{bundle.EditTbPerfilMenuTitle_pmElmncn}" required="true" requiredMessage="#{bundle.EditTbPerfilMenuRequiredMessage_pmElmncn}"/>
+                    <h:outputLabel value="#{bundle.EditTbPerfilMenuLabel_MCnsctvoMnu}" for="MCnsctvoMnu" />
+                    <h:selectOneMenu id="MCnsctvoMnu" value="#{tbPerfilMenuController.selected.MCnsctvoMnu}" title="#{bundle.EditTbPerfilMenuTitle_MCnsctvoMnu}" required="true" requiredMessage="#{bundle.EditTbPerfilMenuRequiredMessage_MCnsctvoMnu}">
+                        <f:selectItems value="#{tbMenuController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{tbPerfilMenuController.update}" value="#{bundle.EditTbPerfilMenuSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTbPerfilMenuViewLink}"/>
+                <br />
+                <h:commandLink action="#{tbPerfilMenuController.prepareList}" value="#{bundle.EditTbPerfilMenuShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTbPerfilMenuIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

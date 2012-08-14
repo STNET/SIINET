@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTbUsuarioPerfilTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTbUsuarioPerfilLabel_cnsctvoUsroPrfl}" for="cnsctvoUsroPrfl" />
+                    <h:inputText id="cnsctvoUsroPrfl" value="#{tbUsuarioPerfilController.selected.cnsctvoUsroPrfl}" title="#{bundle.EditTbUsuarioPerfilTitle_cnsctvoUsroPrfl}" required="true" requiredMessage="#{bundle.EditTbUsuarioPerfilRequiredMessage_cnsctvoUsroPrfl}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioPerfilLabel_cnsctvoUsro}" for="cnsctvoUsro" />
+                    <h:selectOneMenu id="cnsctvoUsro" value="#{tbUsuarioPerfilController.selected.cnsctvoUsro}" title="#{bundle.EditTbUsuarioPerfilTitle_cnsctvoUsro}" required="true" requiredMessage="#{bundle.EditTbUsuarioPerfilRequiredMessage_cnsctvoUsro}">
+                        <f:selectItems value="#{tbUsuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioPerfilLabel_cnsctvoPrfl}" for="cnsctvoPrfl" />
+                    <h:selectOneMenu id="cnsctvoPrfl" value="#{tbUsuarioPerfilController.selected.cnsctvoPrfl}" title="#{bundle.EditTbUsuarioPerfilTitle_cnsctvoPrfl}" required="true" requiredMessage="#{bundle.EditTbUsuarioPerfilRequiredMessage_cnsctvoPrfl}">
+                        <f:selectItems value="#{tbPerfilController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{tbUsuarioPerfilController.update}" value="#{bundle.EditTbUsuarioPerfilSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTbUsuarioPerfilViewLink}"/>
+                <br />
+                <h:commandLink action="#{tbUsuarioPerfilController.prepareList}" value="#{bundle.EditTbUsuarioPerfilShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTbUsuarioPerfilIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTbUsuarioPerfilVigenciasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTbUsuarioPerfilVigenciasLabel_cnsctvoUsroPrflVgncs}" for="cnsctvoUsroPrflVgncs" />
+                    <h:inputText id="cnsctvoUsroPrflVgncs" value="#{tbUsuarioPerfilVigenciasController.selected.cnsctvoUsroPrflVgncs}" title="#{bundle.EditTbUsuarioPerfilVigenciasTitle_cnsctvoUsroPrflVgncs}" required="true" requiredMessage="#{bundle.EditTbUsuarioPerfilVigenciasRequiredMessage_cnsctvoUsroPrflVgncs}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioPerfilVigenciasLabel_cnsctvoUsro}" for="cnsctvoUsro" />
+                    <h:inputText id="cnsctvoUsro" value="#{tbUsuarioPerfilVigenciasController.selected.cnsctvoUsro}" title="#{bundle.EditTbUsuarioPerfilVigenciasTitle_cnsctvoUsro}" />
+                    <h:outputLabel value="#{bundle.EditTbUsuarioPerfilVigenciasLabel_cnsctvoPrfl}" for="cnsctvoPrfl" />
+                    <h:inputText id="cnsctvoPrfl" value="#{tbUsuarioPerfilVigenciasController.selected.cnsctvoPrfl}" title="#{bundle.EditTbUsuarioPerfilVigenciasTitle_cnsctvoPrfl}" />
+                    <h:outputLabel value="#{bundle.EditTbUsuarioPerfilVigenciasLabel_incoVgnca}" for="incoVgnca" />
+                    <h:inputText id="incoVgnca" value="#{tbUsuarioPerfilVigenciasController.selected.incoVgnca}" title="#{bundle.EditTbUsuarioPerfilVigenciasTitle_incoVgnca}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioPerfilVigenciasLabel_fnVgnca}" for="fnVgnca" />
+                    <h:inputText id="fnVgnca" value="#{tbUsuarioPerfilVigenciasController.selected.fnVgnca}" title="#{bundle.EditTbUsuarioPerfilVigenciasTitle_fnVgnca}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioPerfilVigenciasLabel_usroCrcn}" for="usroCrcn" />
+                    <h:inputText id="usroCrcn" value="#{tbUsuarioPerfilVigenciasController.selected.usroCrcn}" title="#{bundle.EditTbUsuarioPerfilVigenciasTitle_usroCrcn}" required="true" requiredMessage="#{bundle.EditTbUsuarioPerfilVigenciasRequiredMessage_usroCrcn}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioPerfilVigenciasLabel_fchaCrcn}" for="fchaCrcn" />
+                    <h:inputText id="fchaCrcn" value="#{tbUsuarioPerfilVigenciasController.selected.fchaCrcn}" title="#{bundle.EditTbUsuarioPerfilVigenciasTitle_fchaCrcn}" required="true" requiredMessage="#{bundle.EditTbUsuarioPerfilVigenciasRequiredMessage_fchaCrcn}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioPerfilVigenciasLabel_cnsctvoUsroPrfl}" for="cnsctvoUsroPrfl" />
+                    <h:selectOneMenu id="cnsctvoUsroPrfl" value="#{tbUsuarioPerfilVigenciasController.selected.cnsctvoUsroPrfl}" title="#{bundle.EditTbUsuarioPerfilVigenciasTitle_cnsctvoUsroPrfl}" required="true" requiredMessage="#{bundle.EditTbUsuarioPerfilVigenciasRequiredMessage_cnsctvoUsroPrfl}">
+                        <f:selectItems value="#{tbUsuarioPerfilController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{tbUsuarioPerfilVigenciasController.update}" value="#{bundle.EditTbUsuarioPerfilVigenciasSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTbUsuarioPerfilVigenciasViewLink}"/>
+                <br />
+                <h:commandLink action="#{tbUsuarioPerfilVigenciasController.prepareList}" value="#{bundle.EditTbUsuarioPerfilVigenciasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTbUsuarioPerfilVigenciasIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

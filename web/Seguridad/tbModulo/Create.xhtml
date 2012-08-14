@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTbModuloTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTbModuloLabel_cnsctvoMdlo}" for="cnsctvoMdlo" />
+                    <h:inputText id="cnsctvoMdlo" value="#{tbModuloController.selected.cnsctvoMdlo}" title="#{bundle.CreateTbModuloTitle_cnsctvoMdlo}" required="true" requiredMessage="#{bundle.CreateTbModuloRequiredMessage_cnsctvoMdlo}"/>
+                    <h:outputLabel value="#{bundle.CreateTbModuloLabel_cdgoMdlo}" for="cdgoMdlo" />
+                    <h:inputText id="cdgoMdlo" value="#{tbModuloController.selected.cdgoMdlo}" title="#{bundle.CreateTbModuloTitle_cdgoMdlo}" required="true" requiredMessage="#{bundle.CreateTbModuloRequiredMessage_cdgoMdlo}"/>
+                    <h:outputLabel value="#{bundle.CreateTbModuloLabel_dscrpcnMdlo}" for="dscrpcnMdlo" />
+                    <h:inputText id="dscrpcnMdlo" value="#{tbModuloController.selected.dscrpcnMdlo}" title="#{bundle.CreateTbModuloTitle_dscrpcnMdlo}" required="true" requiredMessage="#{bundle.CreateTbModuloRequiredMessage_dscrpcnMdlo}"/>
+                    <h:outputLabel value="#{bundle.CreateTbModuloLabel_brrdo}" for="brrdo" />
+                    <h:inputText id="brrdo" value="#{tbModuloController.selected.brrdo}" title="#{bundle.CreateTbModuloTitle_brrdo}" required="true" requiredMessage="#{bundle.CreateTbModuloRequiredMessage_brrdo}"/>
+                    <h:outputLabel value="#{bundle.CreateTbModuloLabel_incoVgnca}" for="incoVgnca" />
+                    <h:inputText id="incoVgnca" value="#{tbModuloController.selected.incoVgnca}" title="#{bundle.CreateTbModuloTitle_incoVgnca}" required="true" requiredMessage="#{bundle.CreateTbModuloRequiredMessage_incoVgnca}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateTbModuloLabel_fnVgnca}" for="fnVgnca" />
+                    <h:inputText id="fnVgnca" value="#{tbModuloController.selected.fnVgnca}" title="#{bundle.CreateTbModuloTitle_fnVgnca}" required="true" requiredMessage="#{bundle.CreateTbModuloRequiredMessage_fnVgnca}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateTbModuloLabel_fchaCrcn}" for="fchaCrcn" />
+                    <h:inputText id="fchaCrcn" value="#{tbModuloController.selected.fchaCrcn}" title="#{bundle.CreateTbModuloTitle_fchaCrcn}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateTbModuloLabel_usroCrcn}" for="usroCrcn" />
+                    <h:inputText id="usroCrcn" value="#{tbModuloController.selected.usroCrcn}" title="#{bundle.CreateTbModuloTitle_usroCrcn}" />
+                    <h:outputLabel value="#{bundle.CreateTbModuloLabel_obsrvcns}" for="obsrvcns" />
+                    <h:inputText id="obsrvcns" value="#{tbModuloController.selected.obsrvcns}" title="#{bundle.CreateTbModuloTitle_obsrvcns}" />
+                    <h:outputLabel value="#{bundle.CreateTbModuloLabel_vsble}" for="vsble" />
+                    <h:inputText id="vsble" value="#{tbModuloController.selected.vsble}" title="#{bundle.CreateTbModuloTitle_vsble}" />
+                    <h:outputLabel value="#{bundle.CreateTbModuloLabel_cnsctvoDsde}" for="cnsctvoDsde" />
+                    <h:inputText id="cnsctvoDsde" value="#{tbModuloController.selected.cnsctvoDsde}" title="#{bundle.CreateTbModuloTitle_cnsctvoDsde}" />
+                    <h:outputLabel value="#{bundle.CreateTbModuloLabel_cnsctvoHsta}" for="cnsctvoHsta" />
+                    <h:inputText id="cnsctvoHsta" value="#{tbModuloController.selected.cnsctvoHsta}" title="#{bundle.CreateTbModuloTitle_cnsctvoHsta}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tbModuloController.create}" value="#{bundle.CreateTbModuloSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{tbModuloController.prepareList}" value="#{bundle.CreateTbModuloShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTbModuloIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

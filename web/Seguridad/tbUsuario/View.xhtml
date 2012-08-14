@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTbUsuarioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTbUsuarioLabel_cnsctvoUsro}"/>
+                    <h:outputText value="#{tbUsuarioController.selected.cnsctvoUsro}" title="#{bundle.ViewTbUsuarioTitle_cnsctvoUsro}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioLabel_cdgoUsro}"/>
+                    <h:outputText value="#{tbUsuarioController.selected.cdgoUsro}" title="#{bundle.ViewTbUsuarioTitle_cdgoUsro}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioLabel_psswrdUsro}"/>
+                    <h:outputText value="#{tbUsuarioController.selected.psswrdUsro}" title="#{bundle.ViewTbUsuarioTitle_psswrdUsro}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioLabel_nmroDcmntoIdntfccn}"/>
+                    <h:outputText value="#{tbUsuarioController.selected.nmroDcmntoIdntfccn}" title="#{bundle.ViewTbUsuarioTitle_nmroDcmntoIdntfccn}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioLabel_nmbreUsro}"/>
+                    <h:outputText value="#{tbUsuarioController.selected.nmbreUsro}" title="#{bundle.ViewTbUsuarioTitle_nmbreUsro}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioLabel_aplldoUsro}"/>
+                    <h:outputText value="#{tbUsuarioController.selected.aplldoUsro}" title="#{bundle.ViewTbUsuarioTitle_aplldoUsro}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioLabel_cmbaCntrsna}"/>
+                    <h:outputText value="#{tbUsuarioController.selected.cmbaCntrsna}" title="#{bundle.ViewTbUsuarioTitle_cmbaCntrsna}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioLabel_actvo}"/>
+                    <h:outputText value="#{tbUsuarioController.selected.actvo}" title="#{bundle.ViewTbUsuarioTitle_actvo}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioLabel_spr}"/>
+                    <h:outputText value="#{tbUsuarioController.selected.spr}" title="#{bundle.ViewTbUsuarioTitle_spr}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioLabel_usroCrcn}"/>
+                    <h:outputText value="#{tbUsuarioController.selected.usroCrcn}" title="#{bundle.ViewTbUsuarioTitle_usroCrcn}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioLabel_fchaCrcn}"/>
+                    <h:outputText value="#{tbUsuarioController.selected.fchaCrcn}" title="#{bundle.ViewTbUsuarioTitle_fchaCrcn}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTbUsuarioLabel_cnsctvoScrsl}"/>
+                    <h:outputText value="#{tbUsuarioController.selected.cnsctvoScrsl}" title="#{bundle.ViewTbUsuarioTitle_cnsctvoScrsl}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tbUsuarioController.destroyAndView}" value="#{bundle.ViewTbUsuarioDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewTbUsuarioEditLink}"/>
+                <br />
+                <h:commandLink action="#{tbUsuarioController.prepareCreate}" value="#{bundle.ViewTbUsuarioCreateLink}" />
+                <br />
+                <h:commandLink action="#{tbUsuarioController.prepareList}" value="#{bundle.ViewTbUsuarioShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewTbUsuarioIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

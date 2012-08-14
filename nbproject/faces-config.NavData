@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="Seguridad/tbUsuarioPerfil/View.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="Seguridad/tbModulo/View.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="Seguridad/tbMenu/Create.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="Seguridad/tbModulo/Edit.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="Seguridad/tbModuloMenu/Create.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="Seguridad/tbSucursal/List.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="Seguridad/tbModulo/List.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="Seguridad/tbPerfilMenu/Edit.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="template.xhtml" x="150" y="1200" zoom="true"/>
+        <Node id="Seguridad/fr_perfiles.jsp" x="2150" y="150" zoom="true"/>
+        <Node id="Seguridad/tbPerfil/View.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="Seguridad/tbUsuarioPerfil/List.xhtml" x="1150" y="600" zoom="true"/>
+        <Node id="Seguridad/tbPerfil/Edit.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="Seguridad/tbMenu/Edit.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="Seguridad/tbSucursal/View.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="Seguridad/tbModuloMenu/List.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="Seguridad/tbUsuario/Create.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="Seguridad/fr_grupo_cargos.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="Seguridad/tbMenu/List.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="Seguridad/tbPerfilMenu/List.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="welcomePrimefaces.xhtml" x="1400" y="450" zoom="true"/>
+        <Node id="Seguridad/tbPerfilMenu/View.xhtml" x="650" y="900" zoom="true"/>
+        <Node id="Seguridad/fr_cargos.jsp" x="1650" y="300" zoom="true"/>
+        <Node id="Seguridad/fr_menu.jsp" x="650" y="450" zoom="true"/>
+        <Node id="Seguridad/tbModulo/Create.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="Seguridad/tbPerfil/Create.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="Seguridad/tbUsuario/Edit.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="Seguridad/tbPerfil/List.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="Seguridad/tbSucursal/Edit.xhtml" x="900" y="750" zoom="true"/>
+        <Node id="Seguridad/tbModuloMenu/Edit.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="Seguridad/tbModuloMenu/View.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="index.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="Seguridad/tbUsuarioPerfil/Create.xhtml" x="1900" y="300" zoom="true"/>
+        <Node id="Seguridad/tbPerfilMenu/Create.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="Seguridad/tbUsuario/List.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="Seguridad/tbMenu/View.xhtml" x="1650" y="450" zoom="true"/>
+        <Node id="Seguridad/tbUsuarioPerfil/Edit.xhtml" x="400" y="1050" zoom="true"/>
+        <Node id="Seguridad/tbUsuario/View.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="Seguridad/tbSucursal/Create.xhtml" x="650" y="600" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTbUsuarioVigenciaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_cnsctvoUsroVgncs}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.cnsctvoUsroVgncs}" title="#{bundle.ViewTbUsuarioVigenciaTitle_cnsctvoUsroVgncs}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_cdgoUsro}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.cdgoUsro}" title="#{bundle.ViewTbUsuarioVigenciaTitle_cdgoUsro}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_psswrdUsro}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.psswrdUsro}" title="#{bundle.ViewTbUsuarioVigenciaTitle_psswrdUsro}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_cdgoPrfl}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.cdgoPrfl}" title="#{bundle.ViewTbUsuarioVigenciaTitle_cdgoPrfl}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_nmroDcmntoIdntfccn}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.nmroDcmntoIdntfccn}" title="#{bundle.ViewTbUsuarioVigenciaTitle_nmroDcmntoIdntfccn}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_nmbreUsro}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.nmbreUsro}" title="#{bundle.ViewTbUsuarioVigenciaTitle_nmbreUsro}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_aplldoUsro}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.aplldoUsro}" title="#{bundle.ViewTbUsuarioVigenciaTitle_aplldoUsro}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_cmbaCntrsna}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.cmbaCntrsna}" title="#{bundle.ViewTbUsuarioVigenciaTitle_cmbaCntrsna}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_actvo}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.actvo}" title="#{bundle.ViewTbUsuarioVigenciaTitle_actvo}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_spr}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.spr}" title="#{bundle.ViewTbUsuarioVigenciaTitle_spr}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_incoVgnca}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.incoVgnca}" title="#{bundle.ViewTbUsuarioVigenciaTitle_incoVgnca}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_fnVgnca}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.fnVgnca}" title="#{bundle.ViewTbUsuarioVigenciaTitle_fnVgnca}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_usroCrcn}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.usroCrcn}" title="#{bundle.ViewTbUsuarioVigenciaTitle_usroCrcn}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_fchaCrcn}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.fchaCrcn}" title="#{bundle.ViewTbUsuarioVigenciaTitle_fchaCrcn}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTbUsuarioVigenciaLabel_cnsctvoUsro}"/>
+                    <h:outputText value="#{tbUsuarioVigenciaController.selected.cnsctvoUsro}" title="#{bundle.ViewTbUsuarioVigenciaTitle_cnsctvoUsro}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tbUsuarioVigenciaController.destroyAndView}" value="#{bundle.ViewTbUsuarioVigenciaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewTbUsuarioVigenciaEditLink}"/>
+                <br />
+                <h:commandLink action="#{tbUsuarioVigenciaController.prepareCreate}" value="#{bundle.ViewTbUsuarioVigenciaCreateLink}" />
+                <br />
+                <h:commandLink action="#{tbUsuarioVigenciaController.prepareList}" value="#{bundle.ViewTbUsuarioVigenciaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewTbUsuarioVigenciaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

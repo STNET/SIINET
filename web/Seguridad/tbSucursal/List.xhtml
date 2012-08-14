@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListTbSucursalTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListTbSucursalEmpty}" rendered="#{tbSucursalController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{tbSucursalController.items.rowCount > 0}">
+                    <h:outputText value="#{tbSucursalController.pagination.pageFirstItem + 1}..#{tbSucursalController.pagination.pageLastItem + 1}/#{tbSucursalController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{tbSucursalController.previous}" value="#{bundle.Previous} #{tbSucursalController.pagination.pageSize}" rendered="#{tbSucursalController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{tbSucursalController.next}" value="#{bundle.Next} #{tbSucursalController.pagination.pageSize}" rendered="#{tbSucursalController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{tbSucursalController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbSucursalTitle_cnsctvoScrsl}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cnsctvoScrsl}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbSucursalTitle_cdgoScrsl}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cdgoScrsl}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbSucursalTitle_nmbreScrsl}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nmbreScrsl}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbSucursalTitle_nmbreRspnsble}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nmbreRspnsble}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbSucursalTitle_cdgoDne}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cdgoDne}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbSucursalTitle_drccn}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.drccn}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbSucursalTitle_tlfn}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tlfn}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbSucursalTitle_fx}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fx}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbSucursalTitle_eml}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.eml}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbSucursalTitle_cnsctvoCdgoCdd}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cnsctvoCdgoCdd}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbSucursalTitle_usroCrcn}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usroCrcn}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTbSucursalTitle_fchaCrcn}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fchaCrcn}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{tbSucursalController.prepareView}" value="#{bundle.ListTbSucursalViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tbSucursalController.prepareEdit}" value="#{bundle.ListTbSucursalEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tbSucursalController.destroy}" value="#{bundle.ListTbSucursalDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{tbSucursalController.prepareCreate}" value="#{bundle.ListTbSucursalCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListTbSucursalIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

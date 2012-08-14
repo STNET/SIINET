@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTbUsuarioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTbUsuarioLabel_cnsctvoUsro}" for="cnsctvoUsro" />
+                    <h:inputText id="cnsctvoUsro" value="#{tbUsuarioController.selected.cnsctvoUsro}" title="#{bundle.EditTbUsuarioTitle_cnsctvoUsro}" required="true" requiredMessage="#{bundle.EditTbUsuarioRequiredMessage_cnsctvoUsro}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioLabel_cdgoUsro}" for="cdgoUsro" />
+                    <h:inputText id="cdgoUsro" value="#{tbUsuarioController.selected.cdgoUsro}" title="#{bundle.EditTbUsuarioTitle_cdgoUsro}" required="true" requiredMessage="#{bundle.EditTbUsuarioRequiredMessage_cdgoUsro}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioLabel_psswrdUsro}" for="psswrdUsro" />
+                    <h:inputText id="psswrdUsro" value="#{tbUsuarioController.selected.psswrdUsro}" title="#{bundle.EditTbUsuarioTitle_psswrdUsro}" required="true" requiredMessage="#{bundle.EditTbUsuarioRequiredMessage_psswrdUsro}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioLabel_nmroDcmntoIdntfccn}" for="nmroDcmntoIdntfccn" />
+                    <h:inputText id="nmroDcmntoIdntfccn" value="#{tbUsuarioController.selected.nmroDcmntoIdntfccn}" title="#{bundle.EditTbUsuarioTitle_nmroDcmntoIdntfccn}" required="true" requiredMessage="#{bundle.EditTbUsuarioRequiredMessage_nmroDcmntoIdntfccn}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioLabel_nmbreUsro}" for="nmbreUsro" />
+                    <h:inputText id="nmbreUsro" value="#{tbUsuarioController.selected.nmbreUsro}" title="#{bundle.EditTbUsuarioTitle_nmbreUsro}" required="true" requiredMessage="#{bundle.EditTbUsuarioRequiredMessage_nmbreUsro}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioLabel_aplldoUsro}" for="aplldoUsro" />
+                    <h:inputText id="aplldoUsro" value="#{tbUsuarioController.selected.aplldoUsro}" title="#{bundle.EditTbUsuarioTitle_aplldoUsro}" required="true" requiredMessage="#{bundle.EditTbUsuarioRequiredMessage_aplldoUsro}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioLabel_cmbaCntrsna}" for="cmbaCntrsna" />
+                    <h:inputText id="cmbaCntrsna" value="#{tbUsuarioController.selected.cmbaCntrsna}" title="#{bundle.EditTbUsuarioTitle_cmbaCntrsna}" required="true" requiredMessage="#{bundle.EditTbUsuarioRequiredMessage_cmbaCntrsna}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioLabel_actvo}" for="actvo" />
+                    <h:inputText id="actvo" value="#{tbUsuarioController.selected.actvo}" title="#{bundle.EditTbUsuarioTitle_actvo}" required="true" requiredMessage="#{bundle.EditTbUsuarioRequiredMessage_actvo}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioLabel_spr}" for="spr" />
+                    <h:inputText id="spr" value="#{tbUsuarioController.selected.spr}" title="#{bundle.EditTbUsuarioTitle_spr}" required="true" requiredMessage="#{bundle.EditTbUsuarioRequiredMessage_spr}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioLabel_usroCrcn}" for="usroCrcn" />
+                    <h:inputText id="usroCrcn" value="#{tbUsuarioController.selected.usroCrcn}" title="#{bundle.EditTbUsuarioTitle_usroCrcn}" required="true" requiredMessage="#{bundle.EditTbUsuarioRequiredMessage_usroCrcn}"/>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioLabel_fchaCrcn}" for="fchaCrcn" />
+                    <h:inputText id="fchaCrcn" value="#{tbUsuarioController.selected.fchaCrcn}" title="#{bundle.EditTbUsuarioTitle_fchaCrcn}" required="true" requiredMessage="#{bundle.EditTbUsuarioRequiredMessage_fchaCrcn}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditTbUsuarioLabel_cnsctvoScrsl}" for="cnsctvoScrsl" />
+                    <h:selectOneMenu id="cnsctvoScrsl" value="#{tbUsuarioController.selected.cnsctvoScrsl}" title="#{bundle.EditTbUsuarioTitle_cnsctvoScrsl}" >
+                        <f:selectItems value="#{tbSucursalController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{tbUsuarioController.update}" value="#{bundle.EditTbUsuarioSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTbUsuarioViewLink}"/>
+                <br />
+                <h:commandLink action="#{tbUsuarioController.prepareList}" value="#{bundle.EditTbUsuarioShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTbUsuarioIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTbUsuarioPerfilVigenciasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTbUsuarioPerfilVigenciasLabel_cnsctvoUsroPrflVgncs}"/>
+                    <h:outputText value="#{tbUsuarioPerfilVigenciasController.selected.cnsctvoUsroPrflVgncs}" title="#{bundle.ViewTbUsuarioPerfilVigenciasTitle_cnsctvoUsroPrflVgncs}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioPerfilVigenciasLabel_cnsctvoUsro}"/>
+                    <h:outputText value="#{tbUsuarioPerfilVigenciasController.selected.cnsctvoUsro}" title="#{bundle.ViewTbUsuarioPerfilVigenciasTitle_cnsctvoUsro}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioPerfilVigenciasLabel_cnsctvoPrfl}"/>
+                    <h:outputText value="#{tbUsuarioPerfilVigenciasController.selected.cnsctvoPrfl}" title="#{bundle.ViewTbUsuarioPerfilVigenciasTitle_cnsctvoPrfl}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioPerfilVigenciasLabel_incoVgnca}"/>
+                    <h:outputText value="#{tbUsuarioPerfilVigenciasController.selected.incoVgnca}" title="#{bundle.ViewTbUsuarioPerfilVigenciasTitle_incoVgnca}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTbUsuarioPerfilVigenciasLabel_fnVgnca}"/>
+                    <h:outputText value="#{tbUsuarioPerfilVigenciasController.selected.fnVgnca}" title="#{bundle.ViewTbUsuarioPerfilVigenciasTitle_fnVgnca}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTbUsuarioPerfilVigenciasLabel_usroCrcn}"/>
+                    <h:outputText value="#{tbUsuarioPerfilVigenciasController.selected.usroCrcn}" title="#{bundle.ViewTbUsuarioPerfilVigenciasTitle_usroCrcn}"/>
+                    <h:outputText value="#{bundle.ViewTbUsuarioPerfilVigenciasLabel_fchaCrcn}"/>
+                    <h:outputText value="#{tbUsuarioPerfilVigenciasController.selected.fchaCrcn}" title="#{bundle.ViewTbUsuarioPerfilVigenciasTitle_fchaCrcn}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTbUsuarioPerfilVigenciasLabel_cnsctvoUsroPrfl}"/>
+                    <h:outputText value="#{tbUsuarioPerfilVigenciasController.selected.cnsctvoUsroPrfl}" title="#{bundle.ViewTbUsuarioPerfilVigenciasTitle_cnsctvoUsroPrfl}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tbUsuarioPerfilVigenciasController.destroyAndView}" value="#{bundle.ViewTbUsuarioPerfilVigenciasDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewTbUsuarioPerfilVigenciasEditLink}"/>
+                <br />
+                <h:commandLink action="#{tbUsuarioPerfilVigenciasController.prepareCreate}" value="#{bundle.ViewTbUsuarioPerfilVigenciasCreateLink}" />
+                <br />
+                <h:commandLink action="#{tbUsuarioPerfilVigenciasController.prepareList}" value="#{bundle.ViewTbUsuarioPerfilVigenciasShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewTbUsuarioPerfilVigenciasIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

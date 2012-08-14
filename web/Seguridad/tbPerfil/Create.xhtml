@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTbPerfilTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTbPerfilLabel_cnsctvoPrfl}" for="cnsctvoPrfl" />
+                    <h:inputText id="cnsctvoPrfl" value="#{tbPerfilController.selected.cnsctvoPrfl}" title="#{bundle.CreateTbPerfilTitle_cnsctvoPrfl}" required="true" requiredMessage="#{bundle.CreateTbPerfilRequiredMessage_cnsctvoPrfl}"/>
+                    <h:outputLabel value="#{bundle.CreateTbPerfilLabel_cdgoPrfl}" for="cdgoPrfl" />
+                    <h:inputText id="cdgoPrfl" value="#{tbPerfilController.selected.cdgoPrfl}" title="#{bundle.CreateTbPerfilTitle_cdgoPrfl}" required="true" requiredMessage="#{bundle.CreateTbPerfilRequiredMessage_cdgoPrfl}"/>
+                    <h:outputLabel value="#{bundle.CreateTbPerfilLabel_nmbrePrfl}" for="nmbrePrfl" />
+                    <h:inputText id="nmbrePrfl" value="#{tbPerfilController.selected.nmbrePrfl}" title="#{bundle.CreateTbPerfilTitle_nmbrePrfl}" required="true" requiredMessage="#{bundle.CreateTbPerfilRequiredMessage_nmbrePrfl}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tbPerfilController.create}" value="#{bundle.CreateTbPerfilSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{tbPerfilController.prepareList}" value="#{bundle.CreateTbPerfilShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTbPerfilIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

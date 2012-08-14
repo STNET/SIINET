@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTbModuloTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTbModuloLabel_cnsctvoMdlo}"/>
+                    <h:outputText value="#{tbModuloController.selected.cnsctvoMdlo}" title="#{bundle.ViewTbModuloTitle_cnsctvoMdlo}"/>
+                    <h:outputText value="#{bundle.ViewTbModuloLabel_cdgoMdlo}"/>
+                    <h:outputText value="#{tbModuloController.selected.cdgoMdlo}" title="#{bundle.ViewTbModuloTitle_cdgoMdlo}"/>
+                    <h:outputText value="#{bundle.ViewTbModuloLabel_dscrpcnMdlo}"/>
+                    <h:outputText value="#{tbModuloController.selected.dscrpcnMdlo}" title="#{bundle.ViewTbModuloTitle_dscrpcnMdlo}"/>
+                    <h:outputText value="#{bundle.ViewTbModuloLabel_brrdo}"/>
+                    <h:outputText value="#{tbModuloController.selected.brrdo}" title="#{bundle.ViewTbModuloTitle_brrdo}"/>
+                    <h:outputText value="#{bundle.ViewTbModuloLabel_incoVgnca}"/>
+                    <h:outputText value="#{tbModuloController.selected.incoVgnca}" title="#{bundle.ViewTbModuloTitle_incoVgnca}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTbModuloLabel_fnVgnca}"/>
+                    <h:outputText value="#{tbModuloController.selected.fnVgnca}" title="#{bundle.ViewTbModuloTitle_fnVgnca}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTbModuloLabel_fchaCrcn}"/>
+                    <h:outputText value="#{tbModuloController.selected.fchaCrcn}" title="#{bundle.ViewTbModuloTitle_fchaCrcn}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTbModuloLabel_usroCrcn}"/>
+                    <h:outputText value="#{tbModuloController.selected.usroCrcn}" title="#{bundle.ViewTbModuloTitle_usroCrcn}"/>
+                    <h:outputText value="#{bundle.ViewTbModuloLabel_obsrvcns}"/>
+                    <h:outputText value="#{tbModuloController.selected.obsrvcns}" title="#{bundle.ViewTbModuloTitle_obsrvcns}"/>
+                    <h:outputText value="#{bundle.ViewTbModuloLabel_vsble}"/>
+                    <h:outputText value="#{tbModuloController.selected.vsble}" title="#{bundle.ViewTbModuloTitle_vsble}"/>
+                    <h:outputText value="#{bundle.ViewTbModuloLabel_cnsctvoDsde}"/>
+                    <h:outputText value="#{tbModuloController.selected.cnsctvoDsde}" title="#{bundle.ViewTbModuloTitle_cnsctvoDsde}"/>
+                    <h:outputText value="#{bundle.ViewTbModuloLabel_cnsctvoHsta}"/>
+                    <h:outputText value="#{tbModuloController.selected.cnsctvoHsta}" title="#{bundle.ViewTbModuloTitle_cnsctvoHsta}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tbModuloController.destroyAndView}" value="#{bundle.ViewTbModuloDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewTbModuloEditLink}"/>
+                <br />
+                <h:commandLink action="#{tbModuloController.prepareCreate}" value="#{bundle.ViewTbModuloCreateLink}" />
+                <br />
+                <h:commandLink action="#{tbModuloController.prepareList}" value="#{bundle.ViewTbModuloShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewTbModuloIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

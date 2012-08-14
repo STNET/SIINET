@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTbUsuarioVigenciaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_cnsctvoUsroVgncs}" for="cnsctvoUsroVgncs" />
+                    <h:inputText id="cnsctvoUsroVgncs" value="#{tbUsuarioVigenciaController.selected.cnsctvoUsroVgncs}" title="#{bundle.CreateTbUsuarioVigenciaTitle_cnsctvoUsroVgncs}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_cnsctvoUsroVgncs}"/>
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_cdgoUsro}" for="cdgoUsro" />
+                    <h:inputText id="cdgoUsro" value="#{tbUsuarioVigenciaController.selected.cdgoUsro}" title="#{bundle.CreateTbUsuarioVigenciaTitle_cdgoUsro}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_cdgoUsro}"/>
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_psswrdUsro}" for="psswrdUsro" />
+                    <h:inputText id="psswrdUsro" value="#{tbUsuarioVigenciaController.selected.psswrdUsro}" title="#{bundle.CreateTbUsuarioVigenciaTitle_psswrdUsro}" />
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_cdgoPrfl}" for="cdgoPrfl" />
+                    <h:inputText id="cdgoPrfl" value="#{tbUsuarioVigenciaController.selected.cdgoPrfl}" title="#{bundle.CreateTbUsuarioVigenciaTitle_cdgoPrfl}" />
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_nmroDcmntoIdntfccn}" for="nmroDcmntoIdntfccn" />
+                    <h:inputText id="nmroDcmntoIdntfccn" value="#{tbUsuarioVigenciaController.selected.nmroDcmntoIdntfccn}" title="#{bundle.CreateTbUsuarioVigenciaTitle_nmroDcmntoIdntfccn}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_nmroDcmntoIdntfccn}"/>
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_nmbreUsro}" for="nmbreUsro" />
+                    <h:inputText id="nmbreUsro" value="#{tbUsuarioVigenciaController.selected.nmbreUsro}" title="#{bundle.CreateTbUsuarioVigenciaTitle_nmbreUsro}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_nmbreUsro}"/>
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_aplldoUsro}" for="aplldoUsro" />
+                    <h:inputText id="aplldoUsro" value="#{tbUsuarioVigenciaController.selected.aplldoUsro}" title="#{bundle.CreateTbUsuarioVigenciaTitle_aplldoUsro}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_aplldoUsro}"/>
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_cmbaCntrsna}" for="cmbaCntrsna" />
+                    <h:inputText id="cmbaCntrsna" value="#{tbUsuarioVigenciaController.selected.cmbaCntrsna}" title="#{bundle.CreateTbUsuarioVigenciaTitle_cmbaCntrsna}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_cmbaCntrsna}"/>
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_actvo}" for="actvo" />
+                    <h:inputText id="actvo" value="#{tbUsuarioVigenciaController.selected.actvo}" title="#{bundle.CreateTbUsuarioVigenciaTitle_actvo}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_actvo}"/>
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_spr}" for="spr" />
+                    <h:inputText id="spr" value="#{tbUsuarioVigenciaController.selected.spr}" title="#{bundle.CreateTbUsuarioVigenciaTitle_spr}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_spr}"/>
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_incoVgnca}" for="incoVgnca" />
+                    <h:inputText id="incoVgnca" value="#{tbUsuarioVigenciaController.selected.incoVgnca}" title="#{bundle.CreateTbUsuarioVigenciaTitle_incoVgnca}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_incoVgnca}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_fnVgnca}" for="fnVgnca" />
+                    <h:inputText id="fnVgnca" value="#{tbUsuarioVigenciaController.selected.fnVgnca}" title="#{bundle.CreateTbUsuarioVigenciaTitle_fnVgnca}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_fnVgnca}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_usroCrcn}" for="usroCrcn" />
+                    <h:inputText id="usroCrcn" value="#{tbUsuarioVigenciaController.selected.usroCrcn}" title="#{bundle.CreateTbUsuarioVigenciaTitle_usroCrcn}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_usroCrcn}"/>
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_fchaCrcn}" for="fchaCrcn" />
+                    <h:inputText id="fchaCrcn" value="#{tbUsuarioVigenciaController.selected.fchaCrcn}" title="#{bundle.CreateTbUsuarioVigenciaTitle_fchaCrcn}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_fchaCrcn}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateTbUsuarioVigenciaLabel_cnsctvoUsro}" for="cnsctvoUsro" />
+                    <h:selectOneMenu id="cnsctvoUsro" value="#{tbUsuarioVigenciaController.selected.cnsctvoUsro}" title="#{bundle.CreateTbUsuarioVigenciaTitle_cnsctvoUsro}" required="true" requiredMessage="#{bundle.CreateTbUsuarioVigenciaRequiredMessage_cnsctvoUsro}">
+                        <f:selectItems value="#{tbUsuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tbUsuarioVigenciaController.create}" value="#{bundle.CreateTbUsuarioVigenciaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{tbUsuarioVigenciaController.prepareList}" value="#{bundle.CreateTbUsuarioVigenciaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTbUsuarioVigenciaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

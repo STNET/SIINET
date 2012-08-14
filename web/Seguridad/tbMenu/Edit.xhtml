@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTbMenuTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTbMenuLabel_cnsctvoMnu}" for="cnsctvoMnu" />
+                    <h:inputText id="cnsctvoMnu" value="#{tbMenuController.selected.cnsctvoMnu}" title="#{bundle.EditTbMenuTitle_cnsctvoMnu}" required="true" requiredMessage="#{bundle.EditTbMenuRequiredMessage_cnsctvoMnu}"/>
+                    <h:outputLabel value="#{bundle.EditTbMenuLabel_indce}" for="indce" />
+                    <h:inputText id="indce" value="#{tbMenuController.selected.indce}" title="#{bundle.EditTbMenuTitle_indce}" required="true" requiredMessage="#{bundle.EditTbMenuRequiredMessage_indce}"/>
+                    <h:outputLabel value="#{bundle.EditTbMenuLabel_nmbreMnu}" for="nmbreMnu" />
+                    <h:inputText id="nmbreMnu" value="#{tbMenuController.selected.nmbreMnu}" title="#{bundle.EditTbMenuTitle_nmbreMnu}" required="true" requiredMessage="#{bundle.EditTbMenuRequiredMessage_nmbreMnu}"/>
+                    <h:outputLabel value="#{bundle.EditTbMenuLabel_indcePdre}" for="indcePdre" />
+                    <h:inputText id="indcePdre" value="#{tbMenuController.selected.indcePdre}" title="#{bundle.EditTbMenuTitle_indcePdre}" />
+                    <h:outputLabel value="#{bundle.EditTbMenuLabel_pdre}" for="pdre" />
+                    <h:inputText id="pdre" value="#{tbMenuController.selected.pdre}" title="#{bundle.EditTbMenuTitle_pdre}" required="true" requiredMessage="#{bundle.EditTbMenuRequiredMessage_pdre}"/>
+                    <h:outputLabel value="#{bundle.EditTbMenuLabel_frm}" for="frm" />
+                    <h:inputText id="frm" value="#{tbMenuController.selected.frm}" title="#{bundle.EditTbMenuTitle_frm}" />
+                    <h:outputLabel value="#{bundle.EditTbMenuLabel_imgn}" for="imgn" />
+                    <h:inputText id="imgn" value="#{tbMenuController.selected.imgn}" title="#{bundle.EditTbMenuTitle_imgn}" />
+                    <h:outputLabel value="#{bundle.EditTbMenuLabel_imgnSlccn}" for="imgnSlccn" />
+                    <h:inputText id="imgnSlccn" value="#{tbMenuController.selected.imgnSlccn}" title="#{bundle.EditTbMenuTitle_imgnSlccn}" />
+                    <h:outputLabel value="#{bundle.EditTbMenuLabel_vsble}" for="vsble" />
+                    <h:inputText id="vsble" value="#{tbMenuController.selected.vsble}" title="#{bundle.EditTbMenuTitle_vsble}" required="true" requiredMessage="#{bundle.EditTbMenuRequiredMessage_vsble}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{tbMenuController.update}" value="#{bundle.EditTbMenuSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTbMenuViewLink}"/>
+                <br />
+                <h:commandLink action="#{tbMenuController.prepareList}" value="#{bundle.EditTbMenuShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTbMenuIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
